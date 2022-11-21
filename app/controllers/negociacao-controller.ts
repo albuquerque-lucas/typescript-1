@@ -9,9 +9,9 @@ export class NegociacaoController {
 
     constructor()
     {
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputValor = document.querySelector('#valor');
+        this.inputData = document.querySelector('#data')!;
+        this.inputQuantidade = document.querySelector('#quantidade')!;
+        this.inputValor = document.querySelector('#valor')!;
     }
 
     adiciona(): void
@@ -20,6 +20,8 @@ export class NegociacaoController {
         const negociacao = this.criaNegociacao();
 
         console.log(negociacao);
+
+        this.limparFormulario();
         
     }
 
@@ -34,5 +36,12 @@ export class NegociacaoController {
         return new Negociacao(date, quantidade, valor);
     }
 
+    limparFormulario(): void
+    {
+        this.inputData.value = '';
+        this.inputQuantidade.value = '';
+        this.inputValor.value = '';
+        this.inputData.focus();
+    }
 
 }
