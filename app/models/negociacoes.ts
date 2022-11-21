@@ -9,9 +9,9 @@ export class Negociacoes {
         this.negociacoes.push(negociacao);
     }
 
-    lista(): Array<Negociacao>
+    lista(): ReadonlyArray<Negociacao>
     {
-        return [...this.negociacoes];
+        return this.negociacoes;
     }
 
 }
